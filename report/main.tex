@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper,oneside]{book}
+\usepackage[utf8]{vietnam}
+\usepackage[utf8]{inputenc}
+\usepackage[top=3cm, bottom=3.5cm, left=3.5cm, right=2.0cm]{geometry}  % căn lề theo quy chuẩn KLTN
+\usepackage{mathptmx}   %time new roman
+\usepackage{xcolor}
+\usepackage{titlesec}
+\usepackage{mathtools}
+\DeclarePairedDelimiter{\abs}{\lvert}{\rvert}
+\usepackage{graphicx}
+\usepackage[export]{adjustbox}
+\usepackage{mdframed}
+\usepackage{amsmath}    
+\usepackage{fancybox} 
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{enumitem}
+\usepackage{tabularx,array}
+\usepackage[unicode]{hyperref}  %đánh chỉ mục
+\usepackage{indentfirst}    %thụt đầu dòng đoạn đầu tiên
+\usepackage{lipsum} %dummy text
+\usepackage{sectsty}
+\usepackage{multirow}
+\usepackage{hhline}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+
+\chapternumberfont{\LARGE} 
+\chaptertitlefont{\centering \huge}
+
+
+\makeatletter
+\renewcommand\section{\leftskip 0pt\@startsection {section}{1}{\z@}%
+                                   {-3.5ex \@plus -1ex \@minus -.2ex}%
+                                   {2.3ex \@plus.2ex}%
+                                   {\normalfont\Large\bfseries}}
+\renewcommand\subsection{\leftskip 25pt\@startsection{subsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\large\bfseries\leftskip 6ex}}
+\renewcommand\subsubsection{\leftskip 50pt\@startsection{subsubsection}{2}{\z@}%
+                                     {-3.25ex\@plus -1ex \@minus -.2ex}%
+                                     {1.5ex \@plus .2ex}%
+                                     {\normalfont\large\bfseries\leftskip 10ex}}
+\makeatother
+
+\setcounter{secnumdepth}{5}
+\setcounter{tocdepth}{5}
+\pagenumbering{gobble}
+\pagestyle{fancy}
+\fancyhf{}
+\cfoot{\thepage}                    %   đánh số trang
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1,2pt}  
+\allowdisplaybreaks 
+\begin{document} 
+
+%-	Bìa cứng - màu xanh dương, chữ mạ vàng (xem mẫu đính kèm)
+%-	Trang tên (tờ lót): chất liệu giấy, nội dung giống như bìa LV
+%-	Ở gáy LV: in nhan đề LV (có thể in tóm tắt nếu nhan đề quá dài), size 15 – 17
+%-	Phiếu Nhiệm vụ LV, chấm điểm Hướng dẫn & Phản biện (đã ký): nhận từ GVHD & GVPB sau khi bảo vệ (theo lịch hẹn).
+%-	Lời cam đoan
+%-	Lời cảm ơn/ Lời ngỏ
+%-	Tóm tắt LV
+%-	Mục lục
+%-	Danh mục, bảng biểu, hình ảnh, ... (nếu có)
+%-	Nội dung LV
+%-	Danh mục TL tham khảo
+%-	Phụ lục (nếu có)
+
+\fontsize{13pt}{18pt}\selectfont   % cỡ chữ 13, cỡ dòng 18
+\setlength{\baselineskip}{18truept}
+
+
+\input{Functions/Titlepage.tex}
+
+
+\input{Functions/Acknowledgments.tex}
+
+\tableofcontents	                        % mục lục
+%\listofsymbols
+\let\origaddvspace\addvspace
+\renewcommand{\addvspace}[1]{}
+\listoffigures                              % hình ảnh
+\renewcommand{\addvspace}[1]{\origaddvspace{#1}}
+\listoftables                               % bảng
+%\listofalgorithms
+
+\linespread{1.25}   %dãn dòng 1.5 lines : 1.2 x 1.25  theo fomat
+\setlength{\parskip}{1em} %giãn đoạn auto
+
+\input{Functions/Abstract.tex}
+\input{Functions/Introduction.tex}
+
+\input{Functions/Chapter1.tex}        
+\input{Functions/Chapter2.tex}
+\input{Functions/Chapter3.tex}        
+\input{Functions/Chapter4.tex}
+\input{Functions/Chapter5.tex}
+
+% \input{Chapter/Conclusion.tex}
+\input{Functions/References.tex}
+
+
+\end{document}

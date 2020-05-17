@@ -1,0 +1,7 @@
+via HTTPS: https://github.com/tigonguyen/fire-dectection.git
+
+git init
+git remote add original https://github.com/tigonguyen/fire-dectection
+git add .
+git commit -m "v01"
+git push azure master -f ("-f" flag is not needed in the second push)

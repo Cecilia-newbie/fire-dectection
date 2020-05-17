@@ -1,7 +1,7 @@
 via HTTPS: https://github.com/tigonguyen/fire-dectection.git
 
 git init
-git add README.md
+git add .
 git commit -m "first commit"
 git remote add origin https://github.com/tigonguyen/fire-dectection.git
 git push -u origin master
